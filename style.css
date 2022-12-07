@@ -1,0 +1,17 @@
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: absolute;
+}
+
+.display-box {
+ width: 7.80%;
+}
+
+#c-button {
+  grid-column: span 2;
+}
+
+#last-button {
+  grid-column: span 3;
+}
