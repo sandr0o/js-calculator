@@ -7,52 +7,35 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>Sandro's Calculator</title>
   </head>
   <body>
-    <table class="calculator">
-      <tr class="calc-button-row">
-        <td>
-          <input type="text" class="display-box" disabled />
-        </td>
-      </tr>
-      <tr class="calc-button-row">
-        <td>
-          <button>C</button>
-          <button>←</button>
-          <button>÷</button>
-        </td>
-      </tr>
-      <tr class="calc-button-row">
-        <td>
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>×</button>
-        </td>
-      </tr>
-      <tr class="calc-button-row">
-        <td>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>-</button>
-        </td>
-      </tr>
-      <tr class="calc-button-row">
-        <td>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>+</button>
-        </td>
-      </tr>
-      <tr class="calc-button-row">
-        <td>
-          <button>0</button>
-          <button>=</button>
-        </td>
-      </tr>
-    </table>
+
+    <input type="text" class="display-box" value="0" disabled />
+
+    <div class="calculator">
+      <button class="first-line other-than-operator" id="c-button">C</button>
+      <button class="first-line other-than-operator">←</button>
+      <button class="first-line operator">÷</button>
+
+      <button class="other-than-operator">7</button>
+      <button class="other-than-operator">8</button>
+      <button class="other-than-operator">9</button>
+      <button class="operator">×</button>
+
+      <button class="other-than-operator">4</button>
+      <button class="other-than-operator">5</button>
+      <button class="other-than-operator">6</button>
+      <button class="operator">-</button>
+
+      <button class="other-than-operator">1</button>
+      <button class="other-than-operator">2</button>
+      <button class="other-than-operator">3</button>
+      <button class="operator">+</button>
+
+      <button id="last-button" class="other-than-operator">0</button>
+      <button class="operator">=</button>
+    </div>
   </body>
 </html>

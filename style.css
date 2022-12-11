@@ -1,0 +1,26 @@
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: absolute;
+  height: 20%;
+}
+
+.display-box {
+ width: 7.80%;
+}
+
+#c-button {
+  grid-column: span 2;
+}
+
+#last-button {
+  grid-column: span 3;
+}
+
+.other-than-operator {
+  background-color: #d8d9db;
+}
+
+.operator {
+  background-color: #df974c;
+}
