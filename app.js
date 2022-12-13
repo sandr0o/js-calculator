@@ -47,11 +47,40 @@ function handleSymbol(symbol) {
   }
 }
 
-// Mathematical Operations
+// Mathematical Proxy Operations
 function mathOps(symbol) {
-  switch (symbol) {
+  if (buffer === "0") {
+    return;
+  }
+
+  const tempBuffer = parseInt(buffer);
+
+  if (total === 0) {
+    total = tempBuffer;
+  } else {
+    calculation(tempBuffer);
+  }
+
+  previousOperator = symbol;
+  buffer = "0";
+
+}
+
+// Calculation
+function calculation(tempBuffer) {
+  switch (previousOperator) {
     case '×':
-    
+      total *= tempBuffer;
+      break;
+    case '÷':
+      total /= tempBuffer;
+      break;
+    case '+':
+      total += tempBuffer;
+      break;
+    case '-':
+      total -= tempBuffer;
+      break;
   }
 }
 
