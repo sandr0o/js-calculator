@@ -1,8 +1,7 @@
-let buffer = "0";
+let buffer = '0';
 let total = 0;
-let previousOperator;
-const screen = document.querySelector(".display-box");
-
+let previousOperator = null;
+const screen = document.querySelector('.display-box');
 
 // This function get's triggered when button is clicked
 function buttonClicked(value) {
@@ -17,39 +16,44 @@ function buttonClicked(value) {
 // Handles symbols and re-Routes mathematical operations
 function handleSymbol(symbol) {
   switch (symbol) {
-    case "×":
+    case '×':
       mathOps(symbol);
       break;
-    case "-":
+    case '-':
       mathOps(symbol);
       break;
-    case "+":
+    case '+':
       mathOps(symbol);
       break;
-    case "=":
-
+    case '=':
+      if (previousOperator === null) {
+        return;
+      }
+      calculation(parseInt(buffer));
+      buffer = '' + total;
+      total = 0;
       break;
-    case "÷":
+    case '÷':
       mathOps(symbol);
       break;
-    case "←":
+    case '←':
       if (buffer.length === 1) {
-        buffer = "0";
+        buffer = '0';
       } else {
         buffer = buffer.substring(0, buffer.length - 1);
       }
       break;
-    case "C":
-      buffer = "0";
+    case 'C':
+      buffer = '0';
       break;
     default:
-      console.log("Symbol Handling failed :(");
+      console.log('Symbol Handling failed :(');
   }
 }
 
 // Mathematical Proxy Operations
 function mathOps(symbol) {
-  if (buffer === "0") {
+  if (buffer === '0') {
     return;
   }
 
@@ -62,8 +66,7 @@ function mathOps(symbol) {
   }
 
   previousOperator = symbol;
-  buffer = "0";
-
+  buffer = '0';
 }
 
 // Calculation
@@ -86,7 +89,7 @@ function calculation(tempBuffer) {
 
 // Handles numbers
 function handleNumber(number) {
-  if (buffer === "0") {
+  if (buffer === '0') {
     buffer = number;
   } else {
     buffer += number;
@@ -100,10 +103,10 @@ function reRender() {
 
 // Init everything
 function init() {
-  console.log("Hi");
+  console.log('Hi');
   document
-    .querySelector(".calculator")
-    ?.addEventListener("click", (event) => {
+    .querySelector('.calculator')
+    ?.addEventListener('click', (event) => {
       buttonClicked(event.target.innerText);
     });
 }
